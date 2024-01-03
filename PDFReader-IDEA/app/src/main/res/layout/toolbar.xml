@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/material_dynamic_primary80" tools:visibility="visible">
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+        <ImageView android:id="@+id/return_icon"
+                android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/return_image"
+                android:layout_centerVertical="true"/>
+        <TextView android:id="@+id/pdf_title"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_toEndOf="@id/return_icon"
+                  android:textSize="16dp"
+                  android:textColor="@color/white"
+                  android:layout_centerVertical="true"
+                  android:text="Title" android:layout_marginStart="5dp"/>
+        <ImageView android:id="@+id/undo_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/round_undo_24"
+                   android:layout_toStartOf="@+id/redo_icon" android:layout_marginEnd="10dp"/>
+        <ImageView android:id="@+id/redo_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/round_redo_24"
+                   android:layout_toStartOf="@+id/draw_icon" android:layout_marginEnd="10dp"/>
+        <ImageView android:id="@+id/draw_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/twotone_draw"
+                   android:layout_toStartOf="@+id/highlight_icon" android:layout_marginEnd="10dp"/>
+        <ImageView android:id="@+id/highlight_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/highlight"
+                   android:layout_toStartOf="@+id/erase_icon" android:layout_marginEnd="10dp"/>
+        <ImageView android:id="@+id/erase_icon"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/clear_24"
+                   android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

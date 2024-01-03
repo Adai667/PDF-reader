@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" android:id="@+id/main">
+
+    <!--    <ImageView-->
+    <!--            android:id="@+id/pdfImage"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:background="@android:color/white"-->
+    <!--            android:contentDescription="@null"-->
+    <!--            android:scaleType="fitCenter" />-->
+    <LinearLayout
+            android:id="@+id/pdfLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/statusBar">
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/toolbar"
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/material_dynamic_primary80" tools:visibility="visible"
+                    tools:ignore="MissingConstraints">
+        <RelativeLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:padding="16dp">
+            <ImageView android:id="@+id/return_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/return_image"
+                       android:layout_centerVertical="true"
+                       android:clickable="true"/>
+            <TextView android:id="@+id/pdf_title"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_toEndOf="@id/return_icon"
+                      android:textSize="16dp"
+                      android:textColor="@color/white"
+                      android:layout_centerVertical="true"
+                      android:text="Title" android:layout_marginStart="5dp"/>
+            <ImageView android:id="@+id/undo_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/round_undo_24"
+                       android:clickable="true"
+                       android:layout_toStartOf="@+id/redo_icon" android:layout_marginEnd="10dp"/>
+            <ImageView android:id="@+id/redo_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/round_redo_24"
+                       android:clickable="true"
+                       android:layout_toStartOf="@+id/draw_icon" android:layout_marginEnd="10dp"/>
+            <ImageView android:id="@+id/draw_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/twotone_draw"
+                       android:clickable="true"
+                       android:layout_toStartOf="@+id/highlight_icon" android:layout_marginEnd="10dp"/>
+            <ImageView android:id="@+id/highlight_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:clickable="true"
+                       android:src="@drawable/highlight"
+                       android:layout_toStartOf="@+id/erase_icon" android:layout_marginEnd="10dp"/>
+            <ImageView android:id="@+id/erase_icon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:clickable="true"
+                       android:src="@drawable/clear_24"
+                       android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/material_dynamic_primary80"
+            android:padding="8dp" app:layout_constraintBottom_toBottomOf="@id/pdfLayout">
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/leftButton">
+            <ImageButton android:background="@android:color/transparent"
+                         android:id="@+id/left_icon"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:src="@drawable/round_arrow_left_24" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prev"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_toEndOf="@id/left_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+            />
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rightButton"
+                android:layout_toEndOf="@id/leftButton" android:layout_marginStart="20dp">
+            <ImageButton android:background="@android:color/transparent"
+                         android:id="@+id/right_icon"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:src="@drawable/round_arrow_right_24" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_toEndOf="@id/right_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+            />
+        </RelativeLayout>
+        <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white" android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
